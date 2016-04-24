@@ -1,0 +1,86 @@
+/********************************************************************************/
+/*				Project : CSCI551 Multi-threading Warmup 2 Project 						*/
+/*				Filename: README											*/
+/*				Name: Atul Kulkarni											*/
+/*				E-mail: atulkulk@usc.edu										*/
+/********************************************************************************/
+------------------------------------------------------------------------------------------------------------------------------------------
+Filenames:
+------------------------------------------------------------------------------------------------------------------------------------------
+1. mm2.cpp
+2. parseCommandLine.cpp
+3. parse.h
+4. Makefile
+5. README
+------------------------------------------------------------------------------------------------------------------------------------------
+How to run
+------------------------------------------------------------------------------------------------------------------------------------------
+To compile the program, execute the following lines at the prompt:
+
+prompt>make
+
+It will create mm2 executable file.
+
+prompt>mm2 [-lambda lambda] [-mu mu] [-s] [-seed seedval] [-size sz] [-n num] [-d {exp|det}] [-t tsfile]
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Description of Files:
+------------------------------------------------------------------------------------------------------------------------------------------
+1. mm2.cpp :
+
+Following functions are defined in this file -
+
+a. void InitRandom(long l_seed)
+	This function generates pseudo random number.
+
+b. int ExponentialInterval(double dval, double rate)
+	This function gets the exponential time interval in millisecond
+
+c. int GetInterval(int exponential, double rate)
+	This function gets the time interval in millisecond
+
+d. void intForThread(int sig) 
+This function handles the interrupt signal if it is invoked.
+
+e. void *arrThread(void *null)
+	This function calculates the customer's inter-arrival time.
+
+f. void *sOneThread(void *sNum)
+	This is a thread function in which the customer is served and statistics are being calculated.
+
+2. parseCommandLine.cpp :
+
+Following functions are defined in this file -
+
+a. void Usage()
+	Prints out usage information, i.e. commandline syntax.
+
+b. void parseClientCommandLine(int argc, char* argv[])
+	This function parses the command line arguments.
+
+c. int checkDigit(string str)
+	This function checks whether the string given is an number
+
+3. parse.h 
+
+This file contains all the variables and functions that will be used in mm2.cpp. This functions and variables are defined as extern.
+
+4. Makefile
+This file contains code to generate client and server executable files. It also contains clean to clean up all object as well executables files.
+
+To clean type: prompt>make clean
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Note:
+------------------------------------------------------------------------------------------------------------------------------------------
+All testcases according to the grading guidelines were tested. 
+
+------------------------------------------------------------------------------------------------------------------------------------------
+References:
+1. Lecture notes.
+2. www.cppreference.com
+3. www.cplusplus.com
+4. https://computing.llnl.gov/tutorials/pthreads/
+5. CSCI 450 & CSCI 499 Course Material
+------------------------------------------------------------------------------------------------------------------------------------------
+
